@@ -1,0 +1,25 @@
+Phase 4 GNN results
+Persistence baseline MAE: 11.416 m/s
+LSTM baseline MAE (Phase 3): 0.805 m/s
+GNN model MAE (overall):     0.806 m/s
+GNN model RMSE:              1.172 m/s
+
+Head-to-head on edges with ZERO bus coverage in the input window
+(the case graph structure should help most):
+  Plain LSTM MAE: 0.735 m/s
+  GNN MAE:        0.728 m/s
+  -> essentially a tie, not a decisive win.
+
+Honest interpretation: at this network size (80 edges, 5x5 grid) and
+simulation length (30 min), most "unobserved" edges are still near
+free-flow speed most of the time, so zero-filling already gets close.
+The GNN's neighbor-borrowing has little room to show an advantage when
+the baseline is already easy. This is a real and useful negative result,
+not a bug -- it suggests the GNN's value would show more clearly on a
+larger/denser network with more genuine congestion variance, or over a
+longer simulation with rush-hour-style traffic waves. Worth running that
+experiment before claiming the GNN as the headline result in a portfolio
+writeup; right now the honest claim is "implemented and validated a GNN
+baseline; found comparable performance to the LSTM at this scale, with
+next step being to test at larger scale where spatial correlation should
+matter more."

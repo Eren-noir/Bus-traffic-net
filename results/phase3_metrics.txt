@@ -1,0 +1,5 @@
+Phase 3 baseline results
+Persistence baseline MAE: 11.416 m/s
+LSTM model MAE:           0.805 m/s
+LSTM model RMSE:          1.173 m/s
+Improvement over persistence: 92.9%

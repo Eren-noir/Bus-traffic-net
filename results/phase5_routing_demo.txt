@@ -1,0 +1,6 @@
+Origin: A0  Destination: C2
+Naive route: A0 -> A1 -> A2 -> B2 -> C2
+  time under real congestion: 57.0s
+Congestion-aware route: A0 -> A1 -> B1 -> C1 -> C2
+  time under real congestion: 53.8s
+Time saved: 3.2s
